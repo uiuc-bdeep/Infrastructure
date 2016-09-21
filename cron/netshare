@@ -20,6 +20,7 @@
 # For more information see the manual pages of crontab(5) and cron(8)
 #
 # m h  dom mon dow   command
+30 7 * * * /usr/local/bdeep/Infrastructure/backup/updateRepo.sh > /tmp/updateRepo.out 2>&1
 30 8 * * * /usr/local/bdeep/Infrastructure/backup/sync.sh > /tmp/syncbackup.out 2>&1
 30 8 * * * /usr/local/bdeep/Infrastructure/backup/daily.sh > /tmp/dailybackup.out 2>&1
 30 8 * * 1 /usr/local/bdeep/Infrastructure/backup/weekly.sh > /tmp/weeklybackup.out 2>&1
