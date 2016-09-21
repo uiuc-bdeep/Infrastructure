@@ -1,0 +1,4 @@
+# Patterns below indicate that such files should be backed up once
+share/projects/*/stores
+share/projects/zillow/production/UnitedStatesHedonic.csv
+share/projects/zillow/production/TrackingPeopleMI
