@@ -3,4 +3,7 @@ set -e
 
 source vars.sh
 
-# TODO: explicit include
+cat $SCHEMES/{once} > $EXCLUDE
+
+tar -X $EXCLUDE -czf $BACKUP/share.backup.tar.gz $SHARE
+/usr/local/bin/aws s3 cp $BACKUP/share.backup.tar.gz $BUCKET
