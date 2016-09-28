@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
-source vars.sh
+BASE=/usr/local/bdeep/Infrastructure/backup
+
+source $BASE/vars.sh
 
 cat $SCHEMES/{once,monthly} > $EXCLUDE
 
