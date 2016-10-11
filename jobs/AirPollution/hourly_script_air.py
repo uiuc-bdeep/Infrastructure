@@ -59,7 +59,7 @@ def get_date_name_file():
    tz = pytz.timezone('Asia/Shanghai')
    now = datetime.datetime.now(tz)
    #now=datetime.datetime.now()
-   Crawl_date=weekday[now.weekday()]+'_'+month[now.month-1]+'_'+str(now.day)+str(now.hour)
+   Crawl_date=weekday[now.weekday()]+'_'+month[now.month-1]+'_'+str(now.day)+'_'+str(now.hour)
    return  Crawl_date
 
 beijingAQI_URL = 'http://www.stateair.net/web/rss/1/1.xml'
