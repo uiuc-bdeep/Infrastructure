@@ -1,0 +1,3 @@
+[submodule "jobs/AirPollution"]
+	path = jobs/AirPollution
+	url = git@github.com:uiuc-bdeep/AirPollution.git
