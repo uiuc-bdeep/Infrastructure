@@ -20,6 +20,7 @@
 # For more information see the manual pages of crontab(5) and cron(8)
 #
 # m h  dom mon dow   command
+0 3 * * * root /usr/local/bdeep/Infrastructure/backup/updateRepo.sh > /tmp/updateRepo.out 2>&1
 0 5 * * * ubuntu /usr/local/bdeep/Infrastructure/jobs/AirPollution/daily_script_air.py >> /tmp/daily_script_air.log 2>&1
 0 * * * * ubuntu /usr/local/bdeep/Infrastructure/jobs/AirPollution/hourly_script_air.py >> /tmp/hourly_script_air.log 2>&1
 0 5 * * * ubuntu /usr/local/bdeep/Infrastructure/jobs/Congestion/upload_vot.sh >> /tmp/upload_vot.log 2>&1
