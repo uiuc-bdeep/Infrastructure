@@ -1,7 +1,8 @@
 {
+	"name": "hello",
 	"environment": "DEV",
-	"inputRoot": "",
-	"outputRoot": "",
+	"inputRoot": ".",
+	"outputRoot": ".",
 	"mainPath": ".",
 	"args": {
 		"name": "BDEEP Member"
