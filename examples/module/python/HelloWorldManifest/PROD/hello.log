@@ -1,0 +1,11 @@
+
+**************************************** JOB STARTED 2016-10-18 20:01:15.854928 ****************************************
+{u'args': {u'name': u'Bob'},
+ 'environment': 'PROD',
+ u'inputRoot': u'.',
+ 'loggingRoot': '.',
+ 'mainPath': '.',
+ 'name': u'hello',
+ u'outputRoot': u'.'}
+-- OUTPUT BELOW --
+

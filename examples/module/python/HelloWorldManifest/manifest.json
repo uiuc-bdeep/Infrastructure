@@ -1,0 +1,23 @@
+{
+	"name": "hello",
+	"main": "hello.py",
+	"requirements": "requirements.txt",
+	"DEV": {
+		"config": {
+			"inputRoot": ".",
+			"outputRoot": ".",
+			"args": {
+				"name": "John"
+			}
+		}
+	},
+	"PROD": {
+		"config": {
+			"inputRoot": ".",
+			"outputRoot": ".",
+			"args": {
+				"name": "Bob"
+			}
+		}
+	}
+}
