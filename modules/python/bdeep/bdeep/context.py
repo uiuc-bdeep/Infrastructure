@@ -5,7 +5,9 @@ This module sets up the proper environment context for BDEEP python scripts.
 import os
 import glob
 import json
-from pprint import pprint
+import pprint
+import logging
+import datetime
 
 config = {
         "environment": "TESTING",
@@ -54,12 +56,28 @@ def getJobArgs():
 def generateProjectPath(pathStr):
     return os.path.join(config["mainPath"], pathStr)
 
+def getHeaderString():
+    firstLine = "{0} JOB STARTED {1} {0}".format("*"*40, datetime.datetime.utcnow())
+    configuration = pprint.pformat(config)
+    lastLine = "-- OUTPUT BELOW --"
+    return "\n{0}\n{1}\n{2}\n".format(firstLine, configuration, lastLine)
+
 def getConfig():
     return config
 
 def setConfig(cfg):
     global config
     config = cfg
+
+    # Setup Logging if Needed
+    if "logging" in config:
+        log = logging.getLogger("BDEEP")
+        handler = logging.FileHandler(config["logging"]["file"])
+        log.addHandler(handler)
+        log.setLevel(config["logging"]["level"])
+
+	log.debug(getHeaderString())
+
 
 def loadConfig(path):
     global config
