@@ -13,6 +13,12 @@ import logging
 
 config = {}
 
+def getHeaderString():
+    firstLine = "{0} JOB STARTED {1} {0}".format("*"*40, datetime.datetime.utcnow())
+    configuration = pprint.pformat(config)
+    lastLine = "-- OUTPUT BELOW --"
+    return "\n{0}\n{1}\n{2}\n".format(firstLine, configuration, lastLine)
+
 """
 Environment variables should override configuration files
 """
@@ -88,12 +94,6 @@ def getJobArgs():
 
 def generateProjectPath(pathStr):
     return os.path.join(config["mainPath"], pathStr)
-
-def getHeaderString():
-    firstLine = "{0} JOB STARTED {1} {0}".format("*"*40, datetime.datetime.utcnow())
-    configuration = pprint.pformat(config)
-    lastLine = "-- OUTPUT BELOW --"
-    return "\n{0}\n{1}\n{2}\n".format(firstLine, configuration, lastLine)
 
 def getConfig():
     return config
