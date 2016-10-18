@@ -1,3 +1,6 @@
 [submodule "jobs/AirPollution"]
 	path = projects/AirPollution
 	url = git@github.com:uiuc-bdeep/AirPollution.git
+[submodule "projects/Congestion"]
+	path = projects/Congestion
+	url = git@github.com:uiuc-bdeep/Congestion.git
