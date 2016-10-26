@@ -18,9 +18,16 @@
 # 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
 #
 # For more information see the manual pages of crontab(5) and cron(8)
+BDEEP_ROOT=/usr/local/bdeep
+INF_ROOT=/usr/local/bdeep/Infrastructure
+VIRT_ENV=/usr/local/bdeep/virtualenvironments/main/bin/activate
+AIR_JOB=/usr/local/bdeep/Infrastructure/projects/AirPollution/jobs
+CONG_JOB=/usr/local/bdeep/Infrastructure/projects/Congestion/jobs
+
+BDEEP_RUN_LOGGING_ROOT=/var/log/bdeep
 #
 # m h  dom mon dow   command
-0 3 * * * root /usr/local/bdeep/Infrastructure/backup/updateRepo.sh > /tmp/updateRepo.out 2>&1
-0 5 * * * ubuntu /usr/local/bdeep/Infrastructure/jobs/AirPollution/daily_script_air.py >> /tmp/daily_script_air.log 2>&1
-0 * * * * ubuntu /usr/local/bdeep/Infrastructure/jobs/AirPollution/hourly_script_air.py >> /tmp/hourly_script_air.log 2>&1
-0 5 * * * ubuntu /usr/local/bdeep/Infrastructure/jobs/Congestion/upload_vot.sh >> /tmp/upload_vot.log 2>&1
+0	3	*	*	* 	root 	$INF_ROOT/backup/updateRepo.sh > /tmp/updateRepo.out 2>&1
+0	5	*	*	* 	admin 	. $VIRT_ENV && python -m bdeep.run $AIR_JOB/daily_script_air DEV >> /tmp/daily_script_air.log 2>&1
+0	*	*	*	*	admin 	. $VIRT_ENV && python -m bdeep.run $AIR_JOB/hourly_script_air DEV >> /tmp/hourly_script_air.log 1>&1
+0	5	*	*	*	admin 	$CONG_JOB/upload_vot.sh >> /tmp/upload_vot.log 2>&1
