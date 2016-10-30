@@ -4,3 +4,6 @@
 [submodule "projects/Congestion"]
 	path = projects/Congestion
 	url = git@github.com:uiuc-bdeep/Congestion.git
+[submodule "projects/Apartments"]
+	path = projects/Apartments
+	url = git@github.com:uiuc-bdeep/Apartments.git
