@@ -10,4 +10,6 @@ ssh-add /home/admin/.ssh/id_rsa
 
 git pull
 
+git submodule update --recursive --remote
+
 popd
