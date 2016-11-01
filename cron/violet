@@ -32,4 +32,4 @@ BDEEP_RUN_LOGGING_ROOT=/var/log/bdeep
 0	5	*	*	* 	admin 	. $VIRT_ENV && python -m bdeep.run $AIR_JOB/daily_script_air DEV >> /tmp/daily_script_air.log 2>&1
 0	*	*	*	*	admin 	. $VIRT_ENV && python -m bdeep.run $AIR_JOB/hourly_script_air DEV >> /tmp/hourly_script_air.log 1>&1
 0	5	*	*	*	admin 	$CONG_JOB/upload_vot.sh >> /tmp/upload_vot.log 2>&1
-0	*	*	*	*	admin	$APT_JOB/placeofmine DEV >> /tmp/placeofmine.log 2>&1
+0	18	*	*	2,4	admin	$APT_JOB/placeofmine DEV >> /tmp/placeofmine.log 2>&1
