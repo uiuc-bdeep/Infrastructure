@@ -10,4 +10,10 @@ ssh-add /home/admin/.ssh/id_rsa
 
 git pull
 
+git submodule update --recursive --remote
+
+git add projects/
+git commit -m 'updating submodules'
+git push origin master
+
 popd
