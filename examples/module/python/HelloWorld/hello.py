@@ -1,5 +1,8 @@
+import logging
 from bdeep.context import getJobArgs
+
+log = logging.getLogger('BDEEP')
 
 args = getJobArgs()
 
-print "Hello, %s" % args["name"]
+log.debug("Hello, %s" % args["name"])
